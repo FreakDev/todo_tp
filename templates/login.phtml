@@ -1,0 +1,15 @@
+<?php include ('header.phtml'); ?>
+
+<h2>Please Log in</h2>
+
+<?php echo $message ?>
+
+<form method="POST" action="login.php">
+	<label for="_nickname">Login</label><br/>
+	<input id="_nickname" name="nickname" type="text" value="" /><br/>
+	<label for="_password">Password</label><br/>
+	<input id="_password" name="password" type="text" value="" /><br/>
+	<input type="submit" name="login" value="Login">
+</form>
+
+<?php include ('footer.phtml'); ?>
