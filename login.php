@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include ('includes/bdd.php');
 
 $message = "";
@@ -11,6 +13,7 @@ if (isset($_POST['login'])) {
 
 	if ($stmt->rowCount() === 1) {
 		$dataUser = $stmt->fetch(PDO::FETCH_ASSOC);
+		$_SESSION['user'] = $dataUser;
 
 		header("Location: index.php");
 		exit();
