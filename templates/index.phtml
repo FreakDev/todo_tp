@@ -5,7 +5,7 @@
 	<select name="user">
 		<option value="-1">All</option>
 		<?php foreach ($dataUsers as $user) { ?>
-			<option value="<?php echo $user['id']; ?>"><?php echo $user['nickname']; ?></option>
+			<option <?php if ( $filterUser !== -1 ) { echo "selected"; } ?> value="<?php echo $user['id']; ?>"><?php echo $user['nickname']; ?></option>
 		<?php } ?>
 	</select>
 	<input type="submit" name="filter" value="Filtrer" />
@@ -24,7 +24,7 @@
 	<textarea id="_task" name="task"></textarea> 
 	<select name="user_id">
 		<?php foreach ($dataUsers as $user) { ?>
-			<option value="<?php echo $user['id']; ?>"><?php echo $user['nickname']; ?></option>
+			<option <?php if ( $filterUser !== -1 ) { echo "selected"; } ?> value="<?php echo $user['id']; ?>"><?php echo $user['nickname']; ?></option>
 		<?php } ?>
 	</select>
 	<input type="submit" name="addTask" value="Ajouter" />
